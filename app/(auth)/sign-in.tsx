@@ -20,7 +20,7 @@ export default function SignIn() {
   return (
     <SafeAreaView className='bg-primary flex-1'>
       <ScrollView contentContainerStyle={{flexGrow:1}}>
-        <View className='flex-1 px-4 my-6 space-y-6'>
+        <View className='flex-1 px-4 mb-6 mt-10 space-y-6'>
           <Image 
             source={images.logo} 
             style={{width: 115, height: 35}}
