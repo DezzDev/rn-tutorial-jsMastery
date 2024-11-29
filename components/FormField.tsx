@@ -16,6 +16,7 @@ export default function FormField({ title, value, handleChangeText, otherStyles,
   const [showPassword, setShowPassword] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
 
+  const isPassword = title === "Password"
 
   return (
     <View className={`space-y-2 ${otherStyles}`}>
@@ -30,11 +31,12 @@ export default function FormField({ title, value, handleChangeText, otherStyles,
           value={value}
           placeholderTextColor={"#7b7b8b"}
           onChangeText={handleChangeText}
-          secureTextEntry={title === "Password" && !showPassword}
+          secureTextEntry={isPassword && !showPassword}
+          keyboardType={keyboardType}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
-        {title === "Password" && (
+        {isPassword && (
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
             <Image source={showPassword ? icons.eye : icons.eyeHide} style={{width: 20, height: 20}} resizeMode='contain'/>
           </TouchableOpacity>
